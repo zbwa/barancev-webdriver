@@ -5,39 +5,39 @@ import org.junit.Test;
 /**
  * Created by Zhanna on 25.02.2017.
  */
-public class MyFirstTest extends TestBase{
+public class MySecondTest extends TestBase{
     @Test
-    public void myFirstTest0(){
+    public void mySecondTest0(){
         driver.get("https://google.com");
     }
 
     @Test
-    public void myFirstTest1(){
+    public void mySecondTest1(){
         driver.get("https://google.com");
     }
 
     @Test
-    public void myFirstTest2(){
+    public void mySecondTest2(){
         driver.get("https://google.com");
     }
 
     @Test
-    public void myFirstTest3(){
+    public void mySecondTest3(){
         driver.get("https://google.com");
     }
 
     @Test
-    public void myFirstTest4(){
+    public void mySecondTest4(){
         driver.get("https://google.com");
     }
 
     @Test
-    public void myFirstTest5(){
+    public void mySecondTest5(){
         driver.get("https://google.com");
     }
 
     @Test
-    public void myFirstTest6(){
+    public void mySecondTest6(){
         driver.get("https://google.com");
     }
 }

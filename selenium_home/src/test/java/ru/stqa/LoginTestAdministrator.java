@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,9 +19,9 @@ public class LoginTestAdministrator {
     private WebDriverWait wait;
     @Before
     public void setUp(){
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, true);
-        driver = new InternetExplorerDriver(caps);
+        DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+        capabilities.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, true);
+        driver = new InternetExplorerDriver(capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
     }
