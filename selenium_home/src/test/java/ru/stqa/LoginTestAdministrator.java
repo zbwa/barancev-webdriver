@@ -15,7 +15,8 @@ public class LoginTestAdministrator extends TestBase{
         try {
             driver.findElement(locator);
             return true;
-        } catch (NoSuchElementException e) {
+        }
+        catch (NoSuchElementException e) {
             return false;
         }
     }
