@@ -9,6 +9,7 @@ import java.util.NoSuchElementException;
 
 /**
  * Created by Zhanna on 25.02.2017.
+ * Тест для задания №7
  */
 public class LoginTestAdministrator extends TestBase{
     public boolean isElementPresent(By locator) {

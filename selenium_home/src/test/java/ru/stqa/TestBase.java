@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Zhanna on 26.02.2017.
+ * Базовый класс в котором инициализируется и отключается драйвер.
  */
 public class TestBase {
     public WebDriver driver;

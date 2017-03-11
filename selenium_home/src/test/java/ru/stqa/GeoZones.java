@@ -3,7 +3,6 @@ package ru.stqa;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -12,6 +11,7 @@ import java.util.List;
 
 /**
  * Created by Zhanna on 09.03.2017.
+ * Тест для задания №9.2
  */
 public class GeoZones extends TestBase {
     @Test
@@ -43,7 +43,7 @@ public class GeoZones extends TestBase {
             for (int j = 0; j < geoZones.size(); j++){
                 sortZones.add(geoZones.get(j).getText());
             }
-            
+
             for (int j = 0; j < sortZones.size(); j++){
                 Assert.assertEquals(sortZones.get(j), geoZones.get(j).getText());
             }

@@ -9,6 +9,7 @@ import java.util.*;
 
 /**
  * Created by Zhanna on 08.03.2017.
+ * Тест для задания №9.1
  */
 public class CountriesAndZones extends TestBase{
 

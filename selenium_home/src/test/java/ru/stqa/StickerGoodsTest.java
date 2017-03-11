@@ -9,8 +9,9 @@ import java.util.List;
 
 /**
  * Created by Zhanna on 07.03.2017.
+ * Тест для задания №8
  */
-public class TaskEight extends TestBase{
+public class StickerGoodsTest extends TestBase{
     @Test
     public void stickerGoodsTest(){
         driver.get("http://localhost/litecart/en/");
