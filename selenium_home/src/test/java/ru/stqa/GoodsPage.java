@@ -43,15 +43,17 @@ public class GoodsPage extends TestBase{
         if (r == g && g == b){
             text_color = "GREY";
         }
-        else if (g == b && r != g && r != b){
+        else if (g == 0 && b == 0){
             text_color = "RED";
         }
 
         return text_color;
     }
 
-    public Boolean compareDimensions(Dimension regular, Dimension campaign){
-        if(regular.getHeight() < campaign.getHeight() && regular.getWidth() < campaign.getWidth()){
+    public Boolean compareDimensions(String regular, String campaign){
+        Float regular_num = Float.parseFloat(regular.replace("px", ""));
+        Float campaign_num = Float.parseFloat(campaign.replace("px", ""));
+        if(campaign_num > regular_num){
             return true;
         }
         return false;
@@ -67,7 +69,7 @@ public class GoodsPage extends TestBase{
         Assert.assertEquals("GREY", colorRGB(color_regular, driver));
         String line_regular = good.findElement(By.cssSelector("s.regular-price")).getCssValue("text-decoration");
         Assert.assertEquals("line-through", line_regular);
-        Dimension size_regular = good.findElement(By.cssSelector("s.regular-price")).getSize();
+        String size_regular = good.findElement(By.cssSelector("s.regular-price")).getCssValue("font-size");
         String campaign_price = good.findElement(By.cssSelector("strong.campaign-price")).getText();
         String color_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color");
         Assert.assertEquals("RED", colorRGB(color_campaign, driver));
@@ -78,7 +80,7 @@ public class GoodsPage extends TestBase{
         if (driver instanceof ChromeDriver){
             Assert.assertEquals("bold", bold_campaign);
         }
-        Dimension size_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getSize();
+        String size_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-size");
         Assert.assertTrue(compareDimensions(size_regular, size_campaign));
         good.click();
         isElementPresent(By.cssSelector("h1"));
@@ -94,6 +96,6 @@ public class GoodsPage extends TestBase{
         if (driver instanceof ChromeDriver){
             Assert.assertEquals("bold", driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-weight"));
         }
-        Assert.assertTrue(compareDimensions(driver.findElement(By.cssSelector("s.regular-price")).getSize(), driver.findElement(By.cssSelector("strong.campaign-price")).getSize()));
+        Assert.assertTrue(compareDimensions(driver.findElement(By.cssSelector("s.regular-price")).getCssValue("font-size"), driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-size")));
     }
 }

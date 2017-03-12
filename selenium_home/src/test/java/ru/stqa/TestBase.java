@@ -19,7 +19,7 @@ public class TestBase {
 
     @Before
     public void setUp(){
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 5);
     }
