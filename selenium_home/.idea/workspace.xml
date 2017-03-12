@@ -85,18 +85,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GoodsPage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/GoodsPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/TestBase.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,24 +97,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewCustomer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NewCustomer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/NewCustomer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="28" column="98" lean-forward="false" selection-start-line="28" selection-start-column="98" selection-end-line="28" selection-end-column="98" />
+            <state relative-caret-position="122">
+              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginTestAdministrator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/LoginTestAdministrator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -498,9 +476,9 @@
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/GeoZones.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/LoginTestAdministrator.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/MyFirstTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/NewCustomer.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/TestBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/GoodsPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/NewCustomer.java" />
       </list>
     </option>
   </component>
@@ -581,7 +559,7 @@
       <recent name="ru.stqa" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GoodsPage.mainPage">
+  <component name="RunManager" selected="JUnit.NewCustomer.loginPage">
     <configuration default="false" name="GeoZones.geoZones" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -596,32 +574,6 @@
       <option name="MAIN_CLASS_NAME" value="ru.stqa.GeoZones" />
       <option name="METHOD_NAME" value="geoZones" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="GeoZones" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="selenium_home_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.stqa" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.GeoZones" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -700,6 +652,32 @@
       <option name="MAIN_CLASS_NAME" value="ru.stqa.NewCustomer" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NewCustomer.loginPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="selenium_home_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.stqa" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.NewCustomer" />
+      <option name="METHOD_NAME" value="loginPage" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -918,18 +896,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.GeoZones.geoZones" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.GeoZones" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.GoodsPage.mainPage" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.GoodsPage" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.NewCustomer" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.GoodsPage.mainPage" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.GoodsPage" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.NewCustomer" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NewCustomer.loginPage" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.GoodsPage.mainPage" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GoodsPage" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NewCustomer" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.GeoZones.geoZones" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.GeoZones" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NewCustomer.loginPage" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GoodsPage.mainPage" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.GoodsPage" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NewCustomer" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GeoZones.geoZones" />
       </list>
     </recent_temporary>
   </component>
@@ -947,35 +925,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GoodsPage - 2017.03.12 at 20h 39m 16s.xml">
-      <configuration name="GoodsPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 21h 38m 05s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 22m 52s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 21h 54m 40s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 23m 58s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 21h 55m 54s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 25m 04s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 21h 57m 53s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 25m 51s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 22h 25m 10s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 26m 24s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 22h 28m 14s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 37m 19s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 22h 31m 16s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 40m 54s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 22h 32m 49s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 42m 12s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 22h 47m 53s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoodsPage_mainPage - 2017.03.12 at 20h 42m 50s.xml">
-      <configuration name="GoodsPage.mainPage" configurationId="JUnit" />
+    <history-entry file="NewCustomer_loginPage - 2017.03.12 at 22h 51m 19s.xml">
+      <configuration name="NewCustomer.loginPage" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -1388,14 +1366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/LoginTestAdministrator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/StickerGoodsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -1406,10 +1376,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/NewCustomer.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/LoginTestAdministrator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="28" column="98" lean-forward="false" selection-start-line="28" selection-start-column="98" selection-end-line="28" selection-end-column="98" />
+        <state relative-caret-position="187">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/GoodsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="114" lean-forward="false" selection-start-line="82" selection-start-column="114" selection-end-line="82" selection-end-column="114" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1426,10 +1404,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/GoodsPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/NewCustomer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+        <state relative-caret-position="122">
+          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
