@@ -4,6 +4,7 @@ import org.junit.Test;
 
 /**
  * Created by Zhanna on 25.02.2017.
+ * Тест для задания №1
  */
 public class MyFirstTest extends TestBase{
     @Test
