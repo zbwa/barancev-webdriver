@@ -4,7 +4,12 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.util.NoSuchElementException;
 
 /**
@@ -22,9 +27,15 @@ public class GoodsPage extends TestBase{
         }
     }
 
-    public String colorRGB(String color){
+    public String colorRGB(String color, WebDriver driver){
         String text_color = null;
-        String numbers[] = color.replace("rgba(", ""). replace(")", "").split(", ");
+        String[] numbers = new String[3];
+        if(driver instanceof FirefoxDriver) {
+            numbers = color.replace("rgb(", "").replace(")", "").split(", ");
+        }
+        if(driver instanceof ChromeDriver){
+            numbers = color.replace("rgba(", "").replace(")", "").split(", ");
+        }
         int[] col = new int[3];
         int r = Integer.parseInt(numbers[0]);
         int g = Integer.parseInt(numbers[1]);
@@ -35,6 +46,7 @@ public class GoodsPage extends TestBase{
         else if (g == b && r != g && r != b){
             text_color = "RED";
         }
+
         return text_color;
     }
 
@@ -52,15 +64,20 @@ public class GoodsPage extends TestBase{
         String name = good.findElement(By.cssSelector("div.name")).getText();
         String regular_price = good.findElement(By.cssSelector("s.regular-price")).getText();
         String color_regular = good.findElement(By.cssSelector("s.regular-price")).getCssValue("color");
-        Assert.assertEquals("GREY", colorRGB(color_regular));
+        Assert.assertEquals("GREY", colorRGB(color_regular, driver));
         String line_regular = good.findElement(By.cssSelector("s.regular-price")).getCssValue("text-decoration");
         Assert.assertEquals("line-through", line_regular);
         Dimension size_regular = good.findElement(By.cssSelector("s.regular-price")).getSize();
         String campaign_price = good.findElement(By.cssSelector("strong.campaign-price")).getText();
         String color_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color");
-        Assert.assertEquals("RED", colorRGB(color_campaign));
+        Assert.assertEquals("RED", colorRGB(color_campaign, driver));
         String bold_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-weight");
-        Assert.assertEquals("bold", bold_campaign);
+        if (driver instanceof FirefoxDriver){
+            Assert.assertEquals("900", bold_campaign);
+        }
+        if (driver instanceof ChromeDriver){
+            Assert.assertEquals("bold", bold_campaign);
+        }
         Dimension size_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getSize();
         Assert.assertTrue(compareDimensions(size_regular, size_campaign));
         good.click();
@@ -68,10 +85,15 @@ public class GoodsPage extends TestBase{
         Assert.assertEquals(name, driver.findElement(By.cssSelector("h1")).getText());
         Assert.assertEquals(regular_price, driver.findElement(By.cssSelector("s.regular-price")).getText());
         Assert.assertEquals(campaign_price, driver.findElement(By.cssSelector("strong.campaign-price")).getText());
-        Assert.assertEquals("GREY", colorRGB(driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color")));
-        Assert.assertEquals("RED", colorRGB(driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color")));
+        Assert.assertEquals("GREY", colorRGB(driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color"), driver));
+        Assert.assertEquals("RED", colorRGB(driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color"), driver));
         Assert.assertEquals("line-through", driver.findElement(By.cssSelector("s.regular-price")).getCssValue("text-decoration"));
-        Assert.assertEquals("bold", driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-weight"));
+        if (driver instanceof FirefoxDriver){
+            Assert.assertEquals("700", driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-weight"));
+        }
+        if (driver instanceof ChromeDriver){
+            Assert.assertEquals("bold", driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-weight"));
+        }
         Assert.assertTrue(compareDimensions(driver.findElement(By.cssSelector("s.regular-price")).getSize(), driver.findElement(By.cssSelector("strong.campaign-price")).getSize()));
     }
 }
