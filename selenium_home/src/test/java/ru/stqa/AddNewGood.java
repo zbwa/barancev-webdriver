@@ -95,7 +95,6 @@ public class AddNewGood extends TestBase {
         driver.findElement(By.cssSelector("button[name=save]")).click();
         //Проверка наличия товара
         driver.findElement(By.xpath("//a[contains(text(),'Rubber Ducks')]")).click();
-        Thread.sleep(2000);
         Assert.assertEquals("Some Name", driver.findElement(By.xpath("//a[contains(text(),'Some Name')]")).getText());
         isElementPresent(By.xpath("//a[contains(text(),'Some Name')]"));
     }
