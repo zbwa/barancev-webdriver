@@ -73,13 +73,7 @@ public class GoodsPage extends TestBase{
         String campaign_price = good.findElement(By.cssSelector("strong.campaign-price")).getText();
         String color_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color");
         Assert.assertEquals("RED", colorRGB(color_campaign, driver));
-        String bold_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-weight");
-        if (driver instanceof FirefoxDriver){
-            Assert.assertEquals("900", bold_campaign);
-        }
-        if (driver instanceof ChromeDriver){
-            Assert.assertEquals("bold", bold_campaign);
-        }
+        Assert.assertEquals("strong", good.findElement(By.cssSelector("strong.campaign-price")).getTagName());
         String size_campaign = good.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-size");
         Assert.assertTrue(compareDimensions(size_regular, size_campaign));
         good.click();
@@ -90,12 +84,7 @@ public class GoodsPage extends TestBase{
         Assert.assertEquals("GREY", colorRGB(driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color"), driver));
         Assert.assertEquals("RED", colorRGB(driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color"), driver));
         Assert.assertEquals("line-through", driver.findElement(By.cssSelector("s.regular-price")).getCssValue("text-decoration"));
-        if (driver instanceof FirefoxDriver){
-            Assert.assertEquals("700", driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-weight"));
-        }
-        if (driver instanceof ChromeDriver){
-            Assert.assertEquals("bold", driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-weight"));
-        }
+        Assert.assertEquals("strong", driver.findElement(By.cssSelector("strong.campaign-price")).getTagName());
         Assert.assertTrue(compareDimensions(driver.findElement(By.cssSelector("s.regular-price")).getCssValue("font-size"), driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("font-size")));
     }
 }
