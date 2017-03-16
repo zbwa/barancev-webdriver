@@ -6,25 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Zhanna on 15.03.2017.
  */
 public class AdditionToCart extends TestBase {
 
-    public boolean isElementPresent(By locator) {
-        try {
-            driver.findElement(locator);
-            return true;
-        }
-        catch (NoSuchElementException e) {
-            return false;
-        }
-    }
     int count = 0;
 
     @Test
@@ -43,13 +31,17 @@ public class AdditionToCart extends TestBase {
             driver.findElement(By.cssSelector("img[src*='logotype']")).click();
         }
         driver.findElement(By.cssSelector("a.link")).click();
-        for (int i = 0; i > 3; i++){
-            List<WebElement> shortcuts = driver.findElements(By.cssSelector("li.shortcut > a"));
+
+        int goods = driver.findElements(By.cssSelector("li.shortcut > a")).size();
+        for (int i = 0; i < goods; i++){
+            List<WebElement> dataTable = driver.findElements(By.cssSelector("td.item"));
+            if(driver.findElements(By.cssSelector("li.shortcut > a")).size() > 0) {
+                List<WebElement> shortcuts = driver.findElements(By.cssSelector("li.shortcut > a"));
+                shortcuts.get(i).click();
+            }
             List<WebElement> remove = driver.findElements(By.cssSelector("button[name*=remove]"));
-            shortcuts.get(i).click();
-            Thread.sleep(2000);
-            remove.get(i).click();
-            Thread.sleep(2000);
+            remove.get(0).click();
+            wait.until(ExpectedConditions.stalenessOf(dataTable.get(0)));
         }
     }
 }
