@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by Zhanna on 15.03.2017.
+ * Тест для задания №13
  */
 public class AdditionToCart extends TestBase {
 
