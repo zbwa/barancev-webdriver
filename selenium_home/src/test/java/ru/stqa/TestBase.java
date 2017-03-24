@@ -1,8 +1,12 @@
 package ru.stqa;
 
+import net.lightbody.bmp.BrowserMobProxy;
+import net.lightbody.bmp.BrowserMobProxyServer;
+import net.lightbody.bmp.client.ClientUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +20,7 @@ import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -26,14 +31,25 @@ import java.util.logging.Level;
 public class TestBase {
     public WebDriver driver;
     public WebDriverWait wait;
+    public BrowserMobProxy proxy;
 
     @Before
     public void setUp(){
+        //5 строчек ниже отвечают за перехват траффика с proxy при помощи BrowserMobProxy
+        proxy = new BrowserMobProxyServer();
+        proxy.start(0);
+        Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
+        /*DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);*/
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        capabilities.setCapability("chrome.switches", Arrays.asList("--proxy-server=127.0.0.1:8888"));
+        //4 строки ниже отвечают за доступ к логам браузера
         LoggingPreferences logPrefs = new LoggingPreferences();
         logPrefs.enable(LogType.BROWSER, Level.ALL);
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
-        driver = new ChromeDriver(cap);
+        //инициализация драйвера
+        driver = new ChromeDriver(capabilities);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 5);
     }
