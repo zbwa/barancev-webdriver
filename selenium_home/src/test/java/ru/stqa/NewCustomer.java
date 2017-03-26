@@ -14,6 +14,7 @@ public class NewCustomer extends TestBase{
 
     @Test
     public void loginPage() throws Exception{
+        String email = "Hannibal" + System.currentTimeMillis() + "@yandex.ru";
         driver.get("http://localhost/litecart/en/");
         driver.findElement(By.cssSelector("a[href*='create_account']")).click();
         driver.findElement(By.cssSelector("input[name=firstname]")).sendKeys("Hannibal");
@@ -25,7 +26,7 @@ public class NewCustomer extends TestBase{
         select_country.selectByVisibleText("United States");
         Select select_zone = new Select(driver.findElement(By.cssSelector("select[name=zone_code]")));
         select_zone.selectByVisibleText("California");
-        driver.findElement(By.cssSelector("input[name=email]")).sendKeys("HannibalGannibal@yandex.ru");
+        driver.findElement(By.cssSelector("input[name=email]")).sendKeys(email);
         driver.findElement(By.cssSelector("input[name=phone]")).sendKeys("+1800555-55-55");
         driver.findElement(By.cssSelector("input[name=password]")).sendKeys("123");
         driver.findElement(By.cssSelector("input[name=confirmed_password]")).sendKeys("123");

@@ -35,14 +35,15 @@ public class TestBase {
 
     @Before
     public void setUp(){
-        //5 строчек ниже отвечают за перехват траффика с proxy при помощи BrowserMobProxy
+        //3 строчки ниже отвечают за инициализацию proxy
         proxy = new BrowserMobProxyServer();
-        proxy.start(0);
+        proxy.start();
         Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
-        /*DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);*/
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        capabilities.setCapability("chrome.switches", Arrays.asList("--proxy-server=127.0.0.1:8888"));
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
+        //2 строчки ниже отвечают за перехват траффика с proxy при помощи BrowserMobProxy для отображения его в Fiddler
+        /*DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        capabilities.setCapability("chrome.switches", Arrays.asList("--proxy-server=127.0.0.1:8888"));*/
         //4 строки ниже отвечают за доступ к логам браузера
         LoggingPreferences logPrefs = new LoggingPreferences();
         logPrefs.enable(LogType.BROWSER, Level.ALL);

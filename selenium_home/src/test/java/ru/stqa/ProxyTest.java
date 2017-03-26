@@ -2,8 +2,8 @@ package ru.stqa;
 
 import net.lightbody.bmp.core.har.Har;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+
+import java.io.File;
 
 /**
  * Created by Zhanna on 24.03.2017.
@@ -12,12 +12,11 @@ import org.openqa.selenium.Keys;
 public class ProxyTest extends TestBase{
     @Test
     public void myFirstTest0() throws Exception{
+        File file = new File("C:\\web_drivers\\test.txt");
         proxy.newHar();
-        driver.get("https://www.sports.ru/");
-        /*driver.findElement(By.cssSelector("input.search-block__input")).sendKeys("Александр Кержаков");
-        driver.findElement(By.cssSelector("input.search-block__input")).sendKeys(Keys.ENTER);
-        driver.findElement(By.cssSelector("a[title='Александр Кержаков']")).click();*/
+        driver.get("http://google.com");
         Har har = proxy.endHar();
-        har.getLog().getEntries().forEach(l -> System.out.println(l.getResponse().getStatus() + ":" + l.getRequest().getUrl()));
+        har.writeTo(file);
+        har.getLog().getEntries().forEach(l -> System.out.println(l.getResponse().getStatus()));
     }
 }
