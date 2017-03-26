@@ -4,8 +4,9 @@ import org.junit.Test;
 
 /**
  * Created by Zhanna on 26.03.2017.
+ * Тест для задания №19
  */
-public class Testing extends Base {
+public class AddToCartPom extends Base {
     @Test
     public void test() throws Exception{
         app.open();
